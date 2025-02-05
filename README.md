@@ -80,7 +80,7 @@ To run the project locally, follow these steps:
 
 ## 📩 Feedback & Support
 💬 Found a bug or have a suggestion? Feel free to create an issue or contribute to the project.  
-📧 Contact: [your.email@example.com](sumiyabintearahman24@gmail.com)
+📧 Contact: [sumiyabintearahman24@gmail.com](sumiyabintearahman24@gmail.com)
 
 ---
 
