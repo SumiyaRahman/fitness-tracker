@@ -39,7 +39,7 @@
 - **State Management:** TanStack Query
 - **Payment Gateway:** Stripe
 - **Authentication:** Firebase, JWT
-- **Hosting & Deployment:** Vercel (Frontend), Render (Backend)
+- **Hosting & Deployment:** Firebase (Frontend), Vercel (Backend)
 
 ---
 
