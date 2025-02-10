@@ -1,4 +1,4 @@
-# 🏋️‍♂️ Fitness Tracker - A MERN based Gym Website
+# 🏋️‍♂️ Fitverse - A MERN based Gym Website
 
 ![Fitness Tracker Banner](https://i.ibb.co/21MQmTq8/Screenshot-216.png)
 
