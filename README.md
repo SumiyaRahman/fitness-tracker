@@ -2,7 +2,7 @@
 
 ![Fitness Tracker Banner](https://i.ibb.co/21MQmTq8/Screenshot-216.png)
 
-🚀 **Fitness Tracker** is a full-stack MERN application designed to help users track their fitness activities, book trainers, and engage with a fitness community. Built with modern web technologies, this project includes role-based functionalities for admins, trainers, and members.
+🚀 **Fitverse** is a full-stack MERN application designed to help users track their fitness activities, book trainers, and engage with a fitness community. Built with modern web technologies, this project includes role-based functionalities for admins, trainers, and members.
 
 ---
 
