@@ -114,22 +114,22 @@ const BeATrainer = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="container mx-auto px-4 py-20"
+            className="w-11/12 mx-auto px-4 py-20"
         >
-            <motion.h2 
-                initial={{ y: -50 }}
-                animate={{ y: 0 }}
-                className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-[#FF640D] to-orange-600 bg-clip-text text-transparent"
+            <motion.h1 
+                whileHover={{ scale: 1.05 }}
+                className="mt-40 text-3xl text-center sm:text-4xl lg:text-5xl font-bold zen-dots text-[#383838] hover:text-[#FF640D] transition-colors duration-300 relative"
             >
                 Become a Trainer
-            </motion.h2>
+                <div className="h-1 w-32 md:w-48 bg-gradient-to-r from-[#FF640D] to-orange-500 mx-auto mt-4 rounded-full"></div>
+            </motion.h1>
             
             <motion.form 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
                 onSubmit={handleSubmit} 
-                className="max-w-6xl mx-auto space-y-8 bg-white p-8 rounded-2xl shadow-xl border border-orange-100"
+                className="w-11/12 mx-auto space-y-8 bg-white my-10 p-8 rounded-2xl shadow-xl border border-orange-100"
             >
                 <div className="grid md:grid-cols-2 gap-6">
                     <motion.div
