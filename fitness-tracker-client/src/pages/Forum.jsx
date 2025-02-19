@@ -100,18 +100,24 @@ const Forum = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8"
+      className="sm:p-6 lg:p-8 min-h-screen bg-gradient-to-br from-orange-50 to-white relative overflow-hidden"
     >
+      {/* Animated background elements */}
+      <div className="absolute -top-40 -left-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+
       <motion.div 
         initial={{ y: -50 }}
         animate={{ y: 0 }}
-        className="flex flex-col sm:flex-row justify-between items-center mb-8 space-y-4 sm:space-y-0"
+        className="flex flex-col sm:flex-row justify-center items-center mb-8 space-y-4 sm:space-y-0"
       >
         <motion.h1 
           whileHover={{ scale: 1.05 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold zen-dots text-[#383838] hover:text-[#FF640D] transition-colors duration-300"
+          className="mt-40 text-3xl sm:text-4xl lg:text-5xl font-bold zen-dots text-[#383838] hover:text-[#FF640D] transition-colors duration-300 relative"
         >
           Fitness Forums
+          <div className="h-1 w-32 md:w-48 bg-gradient-to-r from-[#FF640D] to-orange-500 mx-auto mt-4 rounded-full"></div>
         </motion.h1>
       </motion.div>
 
@@ -119,7 +125,7 @@ const Forum = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 w-11/12 mx-auto py-12"
       >
         {currentPosts.map((forum, index) => {
           const upvotes = forum.votes?.filter((v) => v.type === "upvote").length || 0;
@@ -137,7 +143,7 @@ const Forum = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-orange-100"
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-orange-100"
             >
               <div className="flex items-start gap-4">
                 <motion.div 
