@@ -76,18 +76,18 @@ const Navbar = () => {
     };
 
     const links = <>
-        <li><NavLink to='/' className={({isActive}) => `text-sm tracking-[0.1rem] text-white ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>Home</NavLink></li>
-        <li><NavLink to='/all-trainer' className={({isActive}) => `text-sm tracking-[0.1rem] text-white ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>All Trainer</NavLink></li>
-        <li><NavLink to='/all-classes' className={({isActive}) => `text-sm tracking-[0.1rem] text-white ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>All Classes</NavLink></li>
-        {user && <li><NavLink to='/dashboard' className={({isActive}) => `text-sm tracking-[0.1rem] text-white ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>Dashboard</NavLink></li>}
-        <li><NavLink to='/forums' className={({isActive}) => `text-sm tracking-[0.1rem] text-white ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>Community</NavLink></li>
+        <li><NavLink to='/' className={({isActive}) => `text-sm tracking-[0.1rem] rounded-md ${isActive ? "text-[#FF640D] font-bold bg-[#f5f5f5]" : "text-white font-medium hover:text-[#FF640D] transition-colors"}`}>Home</NavLink></li>
+        <li><NavLink to='/all-trainer' className={({isActive}) => `text-sm tracking-[0.1rem] rounded-md ${isActive ? "text-[#FF640D] font-bold bg-[#f5f5f5]" : "text-white font-medium hover:text-[#FF640D] transition-colors"}`}>All Trainer</NavLink></li>
+        <li><NavLink to='/all-classes' className={({isActive}) => `text-sm tracking-[0.1rem] rounded-md ${isActive ? "text-[#FF640D] font-bold bg-[#f5f5f5]" : "text-white font-medium hover:text-[#FF640D] transition-colors"}`}>All Classes</NavLink></li>
+        {user && <li><NavLink to='/dashboard' className={({isActive}) => `text-sm tracking-[0.1rem] rounded-md ${isActive ? "text-[#FF640D] font-bold bg-[#f5f5f5]" : "text-white font-medium hover:text-[#FF640D] transition-colors"}`}>Dashboard</NavLink></li>}
+        <li><NavLink to='/forums' className={({isActive}) => `text-sm tracking-[0.1rem] rounded-md ${isActive ? "text-[#FF640D] font-bold bg-[#f5f5f5]" : "text-white font-medium hover:text-[#FF640D] transition-colors"}`}>Community</NavLink></li>
     </>
 
     return (
         <nav className={`w-full fixed top-0 left-0 z-[1000] transition-all duration-500 ${
-            isScrolled ? 'bg-[#0F1413] bg-opacity-50 backdrop-blur-md shadow-lg' : 'bg-transparent'
+            isScrolled ? 'bg-gradient-to-r from-[#1f2937a3] via-[#1f293789] to-[#ffffff90]  backdrop-blur-md shadow-lg' : 'bg-gradient-to-r from-[#1f2937a3] via-[#1f293789] to-[#ffffff90] '
         }`}>
-            <div className="navbar container mx-auto px-4 py-3">
+            <div className="navbar max-w-[1440px] mx-auto px-4 py-3">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <motion.div 
@@ -113,7 +113,7 @@ const Navbar = () => {
                         </motion.div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1001] p-6 shadow-2xl bg-white/95 backdrop-blur-md rounded-2xl w-64 space-y-4 absolute left-0"
+                            className="menu menu-sm dropdown-content mt-3 z-[1001] p-6 shadow-2xl bg-gradient-to-r from-[#1f2937a3] via-[#1f293789] to-[#ffffff90] backdrop-blur-md rounded-2xl w-64 space-y-4 absolute left-0"
                         >
                             {links}
                             {user ? (
@@ -134,41 +134,41 @@ const Navbar = () => {
                             ) : (
                                 <div className="pt-4 border-t border-gray-100">
                                     <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                                        <Link to="/login" className="block px-4 py-2.5 text-sm hover:bg-orange-50 rounded-xl transition-all duration-300">Member Login</Link>
+                                        <Link to="/login" className="block px-4 py-2.5 text-sm text-white hover:bg-orange-50 rounded-xl transition-all duration-300">Member Login</Link>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                                        <Link to="/trainer-login" className="block px-4 py-2.5 text-sm hover:bg-orange-50 rounded-xl transition-all duration-300">Trainer Login</Link>
+                                        <Link to="/trainer-login" className="block px-4 py-2.5 text-sm text-white hover:bg-orange-50 rounded-xl transition-all duration-300">Trainer Login</Link>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                                        <Link to="/admin-login" className="block px-4 py-2.5 text-sm hover:bg-orange-50 rounded-xl transition-all duration-300">Admin Login</Link>
+                                        <Link to="/admin-login" className="block px-4 py-2.5 text-sm text-white hover:bg-orange-50 rounded-xl transition-all duration-300">Admin Login</Link>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                                        <Link to="/register" className="block px-4 py-2.5 text-sm hover:bg-orange-50 rounded-xl transition-all duration-300">Register</Link>
+                                        <Link to="/register" className="block px-4 py-2.5 text-sm text-white hover:bg-orange-50 rounded-xl transition-all duration-300">Register</Link>
                                     </motion.li>
                                 </div>
                             )}
                         </ul>
                     </div>
                     <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                        <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full hover:brightness-110 transition-all duration-300 flex items-center justify-center">
+                        <div className="w-20 h-20 md:w-20 md:h-20 bg-white rounded-full hover:brightness-110 transition-all duration-300 flex items-center justify-center">
                         <Link to="/" className="flex-shrink-0">
                             <img 
                                 src={logo} 
                                 alt="FitVerse Logo" 
-                                className="w-20 h-20 md:w-20 md:h-20 p-2 hover:brightness-110 transition-all duration-300"
+                                className="w-20 h-20 md:w-16 md:h-16 p-2 hover:brightness-110 transition-all duration-300"
                             />
                         </Link>
                         </div>
                     </motion.div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 space-x-8">
+                    <ul className="menu menu-horizontal px-1 space-x-8 flex-nowrap">
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end space-x-4 hidden lg:flex">
+                <div className="navbar-end space-x-2 hidden lg:flex">
                     {user ? (
-                        <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-4">
                             <motion.div 
                                 className="dropdown dropdown-end tooltip tooltip-bottom" 
                                 data-tip={userData?.name || 'User'}
@@ -193,7 +193,7 @@ const Navbar = () => {
                             </motion.button>
                         </div>
                     ) : (
-                        <>
+                        <div className="flex items-center gap-2">
                             <motion.div 
                                 className="dropdown dropdown-end"
                                 whileHover={{ scale: 1.02 }}
@@ -226,7 +226,7 @@ const Navbar = () => {
                                     Register
                                 </motion.button>
                             </Link>
-                        </>
+                        </div>
                     )}
                 </div>
             </div>
