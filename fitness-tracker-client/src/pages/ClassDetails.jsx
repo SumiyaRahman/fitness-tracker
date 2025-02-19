@@ -63,7 +63,7 @@ const ClassDetails = () => {
         >
           <motion.h1 
             whileHover={{ scale: 1.02 }}
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-[#FF640D] to-orange-600 bg-clip-text text-transparent"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold pb-4 bg-gradient-to-r from-[#FF640D] to-orange-600 bg-clip-text text-transparent"
           >
             {classDetails?.name}
           </motion.h1>

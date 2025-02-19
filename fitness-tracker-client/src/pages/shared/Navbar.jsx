@@ -76,25 +76,25 @@ const Navbar = () => {
     };
 
     const links = <>
-        <li><NavLink to='/' className={({isActive}) => `text-sm tracking-[0.1rem] ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>Home</NavLink></li>
-        <li><NavLink to='/all-trainer' className={({isActive}) => `text-sm tracking-[0.1rem] ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>All Trainer</NavLink></li>
-        <li><NavLink to='/all-classes' className={({isActive}) => `text-sm tracking-[0.1rem] ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>All Classes</NavLink></li>
-        {user && <li><NavLink to='/dashboard' className={({isActive}) => `text-sm tracking-[0.1rem] ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>Dashboard</NavLink></li>}
-        <li><NavLink to='/forums' className={({isActive}) => `text-sm tracking-[0.1rem] ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>Community</NavLink></li>
+        <li><NavLink to='/' className={({isActive}) => `text-sm tracking-[0.1rem] text-white ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>Home</NavLink></li>
+        <li><NavLink to='/all-trainer' className={({isActive}) => `text-sm tracking-[0.1rem] text-white ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>All Trainer</NavLink></li>
+        <li><NavLink to='/all-classes' className={({isActive}) => `text-sm tracking-[0.1rem] text-white ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>All Classes</NavLink></li>
+        {user && <li><NavLink to='/dashboard' className={({isActive}) => `text-sm tracking-[0.1rem] text-white ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>Dashboard</NavLink></li>}
+        <li><NavLink to='/forums' className={({isActive}) => `text-sm tracking-[0.1rem] text-white ${isActive ? "text-[#FF640D] font-bold" : "text-[#0F1413]font-medium hover:text-[#FF640D] transition-colors"}`}>Community</NavLink></li>
     </>
 
     return (
-        <nav className={`w-full z-[1000] transition-all duration-500 ${
-            isScrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        <nav className={`w-full fixed top-0 left-0 z-[1000] transition-all duration-500 ${
+            isScrolled ? 'bg-[#0F1413] bg-opacity-50 backdrop-blur-md shadow-lg' : 'bg-transparent'
         }`}>
-            <div className="navbar container mx-auto px-4 py-4">
+            <div className="navbar container mx-auto px-4 py-3">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <motion.div 
                             whileTap={{ scale: 0.95 }}
                             tabIndex={0} 
                             role="button" 
-                            className="btn btn-ghost lg:hidden"
+                            className="btn btn-ghost lg:hidden hover:bg-orange-50"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +113,7 @@ const Navbar = () => {
                         </motion.div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1001] p-6 shadow-xl bg-white/90 backdrop-blur-md rounded-xl w-60 space-y-4 absolute left-0"
+                            className="menu menu-sm dropdown-content mt-3 z-[1001] p-6 shadow-2xl bg-white/95 backdrop-blur-md rounded-2xl w-64 space-y-4 absolute left-0"
                         >
                             {links}
                             {user ? (
@@ -124,7 +124,7 @@ const Navbar = () => {
                                         <motion.li whileTap={{ scale: 0.95 }}>
                                             <button 
                                                 onClick={handleLogout}
-                                                className="w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-red-50 rounded-lg transition-all duration-300"
+                                                className="w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-red-50 rounded-xl transition-all duration-300"
                                             >
                                                 Logout
                                             </button>
@@ -134,29 +134,31 @@ const Navbar = () => {
                             ) : (
                                 <div className="pt-4 border-t border-gray-100">
                                     <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                                        <Link to="/login" className="block px-4 py-2 text-sm hover:bg-orange-50 rounded-lg transition-all duration-300">Member Login</Link>
+                                        <Link to="/login" className="block px-4 py-2.5 text-sm hover:bg-orange-50 rounded-xl transition-all duration-300">Member Login</Link>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                                        <Link to="/trainer-login" className="block px-4 py-2 text-sm hover:bg-orange-50 rounded-lg transition-all duration-300">Trainer Login</Link>
+                                        <Link to="/trainer-login" className="block px-4 py-2.5 text-sm hover:bg-orange-50 rounded-xl transition-all duration-300">Trainer Login</Link>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                                        <Link to="/admin-login" className="block px-4 py-2 text-sm hover:bg-orange-50 rounded-lg transition-all duration-300">Admin Login</Link>
+                                        <Link to="/admin-login" className="block px-4 py-2.5 text-sm hover:bg-orange-50 rounded-xl transition-all duration-300">Admin Login</Link>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                                        <Link to="/register" className="block px-4 py-2 text-sm hover:bg-orange-50 rounded-lg transition-all duration-300">Register</Link>
+                                        <Link to="/register" className="block px-4 py-2.5 text-sm hover:bg-orange-50 rounded-xl transition-all duration-300">Register</Link>
                                     </motion.li>
                                 </div>
                             )}
                         </ul>
                     </div>
                     <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+                        <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full hover:brightness-110 transition-all duration-300 flex items-center justify-center">
                         <Link to="/" className="flex-shrink-0">
                             <img 
                                 src={logo} 
                                 alt="FitVerse Logo" 
-                                className="w-20 md:w-24 hover:brightness-110 transition-all duration-300"
+                                className="w-20 h-20 md:w-20 md:h-20 p-2 hover:brightness-110 transition-all duration-300"
                             />
                         </Link>
+                        </div>
                     </motion.div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -170,22 +172,22 @@ const Navbar = () => {
                             <motion.div 
                                 className="dropdown dropdown-end tooltip tooltip-bottom" 
                                 data-tip={userData?.name || 'User'}
+                                whileHover={{ scale: 1.05 }}
                             >
-                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ring-2 ring-orange-100 ring-offset-2">
+                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ring-2 ring-orange-200 ring-offset-2 hover:ring-orange-300 transition-all duration-300">
                                     <div className="w-10 rounded-full">
                                         <img alt="User Profile" src={userData?.photoURL || 'https://i.ibb.co/MgsTCcv/avater.jpg'} />
                                     </div>
                                 </div>
-                                <ul tabIndex={0} className="mt-3 z-[1001] p-4 shadow-xl menu menu-sm dropdown-content bg-white/90 backdrop-blur-md rounded-xl w-60 absolute right-0">
+                                <ul tabIndex={0} className="mt-3 z-[1001] p-4 shadow-2xl menu menu-sm dropdown-content bg-white/95 backdrop-blur-md rounded-2xl w-64 absolute right-0">
                                     <li className="px-4 py-2 text-sm font-medium text-gray-700">{userData?.name || 'User'}</li>
                                     <li className="px-4 py-2 text-sm text-gray-500">{userData?.email || ''}</li>
                                 </ul>
                             </motion.div>
                             <motion.button 
-                                // whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={handleLogout}
-                                className="satoshi bg-gradient-to-r from-[#FF640D] to-orange-600 text-white px-8 py-2.5 rounded-lg text-lg font-semibold tracking-wide hover:shadow-lg hover:shadow-orange-200 transition-all duration-300"
+                                className="satoshi bg-gradient-to-r from-[#FF640D] to-orange-600 text-white px-8 py-2.5 rounded-xl text-lg font-semibold tracking-wide hover:shadow-lg hover:shadow-orange-200 hover:-translate-y-0.5 transition-all duration-300"
                             >
                                 Logout
                             </motion.button>
@@ -194,31 +196,32 @@ const Navbar = () => {
                         <>
                             <motion.div 
                                 className="dropdown dropdown-end"
+                                whileHover={{ scale: 1.02 }}
                             >
                                 <motion.button 
                                     whileTap={{ scale: 0.95 }}
                                     tabIndex={0} 
-                                    className="satoshi bg-gradient-to-r from-[#FF640D] to-orange-600 text-white px-8 py-2.5 rounded-lg text-lg font-semibold tracking-wide hover:shadow-lg hover:shadow-orange-200 transition-all duration-300"
+                                    className="satoshi bg-gradient-to-r from-[#FF640D] to-orange-600 text-white px-5 py-2 rounded-lg text-lg font-semibold tracking-wide hover:shadow-lg hover:shadow-orange-200 hover:-translate-y-0.5 transition-all duration-300"
                                 >
                                     Login
                                 </motion.button>
-                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-4 shadow-xl bg-white/90 backdrop-blur-md rounded-xl w-60 mt-2 space-y-1">
+                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-4 shadow-2xl bg-white/95 backdrop-blur-md rounded-2xl w-64 mt-2 space-y-1">
                                     <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                                        <Link to="/login" className="block px-4 py-2 hover:bg-orange-50 rounded-lg transition-all duration-300">Member Login</Link>
+                                        <Link to="/login" className="block px-4 py-2.5 hover:bg-orange-50 rounded-xl transition-all duration-300">Member Login</Link>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                                        <Link to="/trainer-login" className="block px-4 py-2 hover:bg-orange-50 rounded-lg transition-all duration-300">Trainer Login</Link>
+                                        <Link to="/trainer-login" className="block px-4 py-2.5 hover:bg-orange-50 rounded-xl transition-all duration-300">Trainer Login</Link>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                                        <Link to="/admin-login" className="block px-4 py-2 hover:bg-orange-50 rounded-lg transition-all duration-300">Admin Login</Link>
+                                        <Link to="/admin-login" className="block px-4 py-2.5 hover:bg-orange-50 rounded-xl transition-all duration-300">Admin Login</Link>
                                     </motion.li>
                                 </ul>
                             </motion.div>
                             <Link to='/register'>
                                 <motion.button 
-                                    whileHover={{ scale: 1.05 }}
+                                    whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="satoshi bg-gradient-to-r from-gray-800 to-gray-900 text-white px-8 py-2.5 rounded-lg text-lg font-semibold tracking-wide hover:shadow-lg hover:shadow-gray-200 transition-all duration-300"
+                                    className="satoshi bg-white text-[#FF640D] px-5 py-2 rounded-lg text-lg font-semibold tracking-wide hover:shadow-lg hover:shadow-gray-50 hover:-translate-y-0.5 transition-all duration-300"
                                 >
                                     Register
                                 </motion.button>

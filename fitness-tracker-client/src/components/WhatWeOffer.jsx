@@ -62,31 +62,31 @@ const WhatWeOffer = () => {
     };
 
     return (
-        <div className="bg-white py-12 sm:py-16 md:py-20 w-11/12 mx-auto">
-            <div className="container mx-auto px-4 sm:px-6">
+        <div className="bg-gradient-to-br from-white via-orange-50/30 to-white py-16 sm:py-20 lg:py-24 w-full">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: -20 }}
+                    initial={{ opacity: 0, y: -30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-12 sm:mb-16"
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-center mb-16 sm:mb-20 lg:mb-24"
                 >
                     <motion.h3 
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2, duration: 0.6 }}
-                        className="text-[#FF640D] text-base sm:text-lg font-semibold mb-3 sm:mb-4"
+                        className="text-[#FF640D] text-base sm:text-lg lg:text-base font-semibold mb-4 tracking-wider"
                     >
                         What We Offer
                     </motion.h3>
                     <motion.h2 
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
-                        className="zen-dots text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight"
+                        transition={{ delay: 0.4, duration: 0.8 }}
+                        className="zen-dots text-[#1f2937] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight"
                     >
                         THE BEST STANDARDS ANYWHERE
                     </motion.h2>
@@ -98,31 +98,43 @@ const WhatWeOffer = () => {
                     variants={containerVariants}
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10"
                 >
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="text-center p-4 sm:p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 hover:shadow-lg"
+                            whileHover={{ 
+                                scale: 1.02,
+                                boxShadow: "0 10px 30px rgba(0,0,0,0.1)"
+                            }}
+                            className="text-center p-6 sm:p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 transition-all duration-500"
                         >
                             <motion.div
                                 whileHover={{ scale: 1.1, rotate: 5 }}
-                                transition={{ type: "spring", stiffness: 300 }}
-                                className="inline-block text-[#FF640D] mb-4 sm:mb-6"
+                                whileTap={{ scale: 0.95 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                className="inline-block text-[#FF640D] mb-6 sm:mb-8 bg-orange-100/50 p-4 rounded-2xl"
                             >
                                 {feature.icon}
                             </motion.div>
                             <motion.h3 
-                                className="text-lg sm:text-xl font-bold mb-3 sm:mb-4"
+                                whileHover={{ color: "#FF640D" }}
+                                transition={{ duration: 0.3 }}
+                                className="text-xl sm:text-2xl font-bold mb-4 sm:mb-5"
                             >
                                 {feature.title}
                             </motion.h3>
                             <motion.p 
-                                className="text-gray-600 leading-relaxed text-sm sm:text-base"
+                                className="text-gray-600 leading-relaxed text-sm sm:text-base lg:text-lg"
                             >
                                 {feature.description}
                             </motion.p>
+                            <motion.div
+                                initial={{ scale: 0 }}
+                                whileHover={{ scale: 1 }}
+                                className="mt-6 w-12 h-1 bg-gradient-to-r from-[#FF640D] to-orange-400 mx-auto rounded-full"
+                            />
                         </motion.div>
                     ))}
                 </motion.div>
