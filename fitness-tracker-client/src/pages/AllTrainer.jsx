@@ -47,10 +47,26 @@ const AllTrainer = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-gray-600 text-lg max-w-2xl mx-auto"
+            className="text-gray-600 text-lg max-w-2xl mx-auto mb-8"
           >
             Transform your fitness journey with our certified professionals
           </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <Link to="/be-a-trainer">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-[#FF640D] to-orange-500 text-white px-8 py-3 rounded-xl font-semibold tracking-wide hover:shadow-lg hover:shadow-orange-200 transition-all duration-300"
+              >
+                Become a Trainer
+              </motion.button>
+            </Link>
+          </motion.div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-12 w-11/12 mx-auto">
