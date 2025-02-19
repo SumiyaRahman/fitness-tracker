@@ -32,7 +32,7 @@ const Team = () => {
                     <motion.h2 
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#FF640D] to-orange-600 bg-clip-text text-transparent zen-dots"
+                        className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 text-[#1f2937] zen-dots"
                     >
                         Meet Our Expert Trainers
                     </motion.h2>
