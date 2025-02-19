@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 const AllClasses = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const classesPerPage = 6;
+  const classesPerPage = 8;
 
   const { data: classes = [], isLoading: classesLoading, error: classesError } = useQuery({
     queryKey: ['classes'],
@@ -42,27 +42,33 @@ const AllClasses = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="min-h-screen p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-orange-50 to-white"
+        className="min-h-screen pt-40 pb-20 bg-gradient-to-br from-orange-50 to-white relative overflow-hidden"
       >
+        {/* Animated background elements */}
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+
         <motion.h1 
           initial={{ y: -50 }}
           animate={{ y: 0 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 zen-dots text-[#383838] hover:text-[#FF640D] transition-colors duration-300"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 zen-dots text-[#383838] hover:text-[#FF640D] transition-colors duration-300 relative"
         >
           All Classes
+          <div className="h-1 w-32 md:w-48 bg-gradient-to-r from-[#FF640D] to-orange-500 mx-auto mt-4 rounded-full"></div>
         </motion.h1>
       
         <motion.div 
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="max-w-md mx-auto mb-8"
+          className="max-w-md mx-auto mb-8 relative z-10"
         >
           <div className="relative">
             <input
               type="text"
               placeholder="Search classes..."
-              className="w-full px-6 py-3 rounded-full border-2 border-orange-100 focus:outline-none focus:ring-2 focus:ring-[#FF640D] focus:border-transparent shadow-lg transition-all duration-300 pl-12"
+              className="w-full px-6 py-3 rounded-full border-2 border-orange-100 focus:outline-none focus:ring-2 focus:ring-[#FF640D] focus:border-transparent shadow-lg transition-all duration-300 pl-12 backdrop-blur-sm bg-white/80"
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
@@ -79,7 +85,7 @@ const AllClasses = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 my-12 w-11/12 mx-auto"
         >
           {currentClasses.map((classItem, index) => (
             <motion.div
